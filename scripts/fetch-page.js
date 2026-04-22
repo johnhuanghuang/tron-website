@@ -5,6 +5,9 @@ const path = require("path");
 const CACHE_DIR = path.join(__dirname, "cache");
 const REQUEST_DELAY_MS = 1000;
 
+// Respect system proxy for Node.js fetch
+const HttpsProxyAgent = require("/Users/john/.openclaw/workspace/projects/tron-website/node_modules/https-proxy-agent").default || require("/Users/john/.openclaw/workspace/projects/tron-website/node_modules/https-proxy-agent");
+
 // Ensure cache directory exists
 if (!fs.existsSync(CACHE_DIR)) {
   fs.mkdirSync(CACHE_DIR, { recursive: true });
@@ -43,6 +46,7 @@ async function fetchPage(url, retries = 3, delay = REQUEST_DELAY_MS) {
           Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
           "Accept-Language": "en-US,en;q=0.9",
         },
+        agent: httpsProxyAgent,
       });
 
       if (!response.ok) {
