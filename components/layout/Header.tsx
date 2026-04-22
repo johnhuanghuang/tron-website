@@ -52,11 +52,14 @@ const navItems: NavItem[] = [
   {
     label: "Start",
     dropdown: [
-      { label: "Pick Wallet", href: "/start#wallets", description: "Choose your TRON wallet", icon: Wallet },
-      { label: "Get TRX", href: "/start#get-trx", description: "Acquire TRX tokens", icon: Coins },
-      { label: "Browser", href: "/ecosystem", description: "Explore the blockchain", icon: Globe },
-      { label: "DApp Store", href: "/ecosystem", description: "Discover decentralized apps", icon: Cube },
-      { label: "FAQ", href: "/programs#faq", description: "Frequently asked questions", icon: Question },
+      { label: "Get TRX", href: "/trx", description: "Learn how to acquire TRX tokens", icon: Coins },
+      { label: "Get Tron USDT", href: "/usdt", description: "Get Tron USDT - zero gas fees, instant transfers", icon: CurrencyDollar },
+      { label: "Select a Wallet", href: "/wallets", description: "Choose the best TRON wallet for you", icon: Wallet },
+      { label: "Developers", href: "/developers", description: "Build on TRON", icon: Rocket },
+      { label: "Explorer", href: "https://tronscan.org/", description: "Browse the TRON blockchain", icon: Globe },
+      { label: "Whitepaper", href: "/whitepaper", description: "Read the TRON technical whitepaper", icon: FileText },
+      { label: "FAQ", href: "/faq", description: "Frequently asked questions", icon: Question },
+      { label: "Tron AI", href: "/tron-ai", description: "AI-powered TRON ecosystem assistant", icon: ChatCircle },
     ],
   },
   {
@@ -322,10 +325,10 @@ export function Header() {
                 "hover:bg-[rgba(251,113,133,0.15)] hover:border-[rgba(251,113,133,0.5)]",
                 "transition-all duration-200"
               )}
-              aria-label="AI Search"
+              aria-label="Tron AI"
             >
               <ChatCircle size={18} weight="bold" />
-              AI Search
+              Tron AI
             </button>
             <Button size="sm" className="ml-2">
               <Wallet size={18} weight="bold" className="mr-2" />
@@ -404,10 +407,10 @@ export function Header() {
                     "hover:bg-[rgba(251,113,133,0.15)] hover:border-[rgba(251,113,133,0.5)]",
                     "transition-all duration-200"
                   )}
-                  aria-label="AI Search"
+                  aria-label="Tron AI"
                 >
                   <ChatCircle size={22} weight="bold" />
-                  AI Search
+                  Tron AI
                 </button>
                 <Button size="md" className="flex-1">
                   <Wallet size={18} weight="bold" className="mr-2" />
@@ -419,7 +422,7 @@ export function Header() {
         )}
       </AnimatePresence>
 
-      {/* AI Search Modal */}
+      {/* Tron AI Modal */}
       <AISearchModal
         isOpen={isAISearchOpen}
         onClose={() => setIsAISearchOpen(false)}
