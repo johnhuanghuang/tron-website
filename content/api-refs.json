@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "id": "account",
+      "label": "Account",
+      "methods": [
+        {
+          "name": "getAccount",
+          "description": "Query account information by address",
+          "parameters": [
+            { "name": "address", "type": "string", "required": true, "description": "TRON address (base58)" }
+          ],
+          "response": "{ address: string, balance: number, create_time: number }",
+          "example": "const account = await tronWeb.trx.getAccount('TX123...');"
+        },
+        {
+          "name": "getBalance",
+          "description": "Get TRX balance for an address",
+          "parameters": [
+            { "name": "address", "type": "string", "required": true, "description": "TRON address" }
+          ],
+          "response": "number (sun)",
+          "example": "const balance = await tronWeb.trx.getBalance('TX123...');"
+        },
+        {
+          "name": "getAccountBalance",
+          "description": "Get detailed account balance including TRX and tokens",
+          "parameters": [
+            { "name": "address", "type": "string", "required": true, "description": "TRON address (base58 or hex)" },
+            { "name": "options", "type": "object", "required": false, "description": "Optional parameters including visible flag" }
+          ],
+          "response": "{ balance: number, trx_balance: number, tokens: TokenInfo[] }",
+          "example": "const detailed = await tronWeb.trx.getAccountBalance('TX123...', { visible: true });"
+        }
+      ]
+    },
+    {
+      "id": "transaction",
+      "label": "Transaction",
+      "methods": [
+        {
+          "name": "sendTrx",
+          "description": "Send TRX to another address",
+          "parameters": [
+            { "name": "to", "type": "string", "required": true, "description": "Recipient address" },
+            { "name": "amount", "type": "number", "required": true, "description": "Amount in sun (1 TRX = 1,000,000 sun)" }
+          ],
+          "response": "{ txid: string, transaction: object }",
+          "example": "const result = await tronWeb.trx.sendTrx('TX456...', 1000000);"
+        },
+        {
+          "name": "sendToken",
+          "description": "Send TRC-10 tokens to another address",
+          "parameters": [
+            { "name": "to", "type": "string", "required": true, "description": "Recipient address" },
+            { "name": "tokenId", "type": "string", "required": true, "description": "Token ID (for TRC-10) or token symbol" },
+            { "name": "amount", "type": "number", "required": true, "description": "Token amount (integer, no decimals)" }
+          ],
+          "response": "{ txid: string }",
+          "example": "const result = await tronWeb.trx.sendToken('TX456...', '1002000', 100);"
+        },
+        {
+          "name": "createTransaction",
+          "description": "Create an unsigned transaction object",
+          "parameters": [
+            { "name": "to", "type": "string", "required": true, "description": "Recipient address" },
+            { "name": "amount", "type": "number", "required": true, "description": "Amount in sun" },
+            { "name": "options", "type": "object", "required": false, "description": "Optional fee limit and token info" }
+          ],
+          "response": "{ transaction: TransactionObject }",
+          "example": "const tx = await tronWeb.trx.createTransaction('TX456...', 1000000);"
+        }
+      ]
+    },
+    {
+      "id": "trc20",
+      "label": "TRC-20 Token",
+      "methods": [
+        {
+          "name": "transfer",
+          "description": "Transfer TRC-20 tokens",
+          "parameters": [
+            { "name": "contractAddress", "type": "string", "required": true, "description": "Token contract address" },
+            { "name": "to", "type": "string", "required": true, "description": "Recipient address" },
+            { "name": "amount", "type": "string", "required": true, "description": "Token amount (with decimals)" }
+          ],
+          "response": "{ txid: string }",
+          "example": "const tx = await contract.methods.transfer(to, amount).send();"
+        },
+        {
+          "name": "balanceOf",
+          "description": "Get TRC-20 token balance for an address",
+          "parameters": [
+            { "name": "contractAddress", "type": "string", "required": true, "description": "Token contract address" },
+            { "name": "address", "type": "string", "required": true, "description": "Wallet address to check" }
+          ],
+          "response": "string (raw token amount)",
+          "example": "const balance = await contract.methods.balanceOf('TX123...').call();"
+        },
+        {
+          "name": "approve",
+          "description": "Approve a spender to transfer tokens",
+          "parameters": [
+            { "name": "contractAddress", "type": "string", "required": true, "description": "Token contract address" },
+            { "name": "spender", "type": "string", "required": true, "description": "Spender address" },
+            { "name": "amount", "type": "string", "required": true, "description": "Amount to approve" }
+          ],
+          "response": "{ txid: string }",
+          "example": "const tx = await contract.methods.approve(spender, amount).send();"
+        }
+      ]
+    }
+  ]
+}

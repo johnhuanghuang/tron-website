@@ -1,0 +1,18 @@
+{
+  "categories": [
+    {
+      "id": "get-started",
+      "label": "Get Started",
+      "pages": [
+        { "slug": "get-started", "title": "Get Started with TRON" }
+      ]
+    },
+    {
+      "id": "smart-contracts",
+      "label": "Smart Contracts",
+      "pages": [
+        { "slug": "smart-contracts", "title": "Smart Contracts on TRON" }
+      ]
+    }
+  ]
+}
