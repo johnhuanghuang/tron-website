@@ -52,11 +52,11 @@ const navItems: NavItem[] = [
   {
     label: "Start",
     dropdown: [
-      { label: "Pick Wallet", href: "#", description: "Choose your TRON wallet", icon: Wallet },
-      { label: "Get TRX", href: "#", description: "Acquire TRX tokens", icon: Coins },
-      { label: "Browser", href: "#", description: "Explore the blockchain", icon: Globe },
-      { label: "DApp Store", href: "#", description: "Discover decentralized apps", icon: Cube },
-      { label: "FAQ", href: "#", description: "Frequently asked questions", icon: Question },
+      { label: "Pick Wallet", href: "/start#wallets", description: "Choose your TRON wallet", icon: Wallet },
+      { label: "Get TRX", href: "/start#get-trx", description: "Acquire TRX tokens", icon: Coins },
+      { label: "Browser", href: "/ecosystem", description: "Explore the blockchain", icon: Globe },
+      { label: "DApp Store", href: "/ecosystem", description: "Discover decentralized apps", icon: Cube },
+      { label: "FAQ", href: "/programs#faq", description: "Frequently asked questions", icon: Question },
     ],
   },
   {
@@ -87,10 +87,10 @@ const navItems: NavItem[] = [
     label: "Participate",
     dropdown: [
       { label: "Events", href: "/events", description: "Upcoming events", icon: Calendar },
-      { label: "Hackathons", href: "#", description: "Global hackathon series", icon: Trophy },
+      { label: "Hackathons", href: "/events", description: "Global hackathon series", icon: Trophy },
       { label: "Grants", href: "/programs", description: "Funding opportunities", icon: CurrencyDollar },
-      { label: "Community", href: "#", description: "Join the community", icon: Users },
-      { label: "Governance", href: "#", description: "DAO participation", icon: Handshake },
+      { label: "Community", href: "https://discord.gg/trondao", description: "Join the community", icon: Users },
+      { label: "Governance", href: "/about#governance", description: "DAO participation", icon: Handshake },
     ],
   },
   {
