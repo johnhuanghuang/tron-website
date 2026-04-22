@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { CaretDown, CaretRight, List, X } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils/cn";
 
@@ -21,11 +22,16 @@ interface DevSidebarProps {
   onNavigate?: (slug: string) => void;
 }
 
-export function DevSidebar({ categories, currentSlug, onNavigate }: DevSidebarProps) {
+export function DevSidebar({ categories, currentSlug }: DevSidebarProps) {
+  const router = useRouter();
   const [expandedCats, setExpandedCats] = useState<Set<string>>(
     new Set(categories.map((c) => c.id))
   );
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const navigateTo = (slug: string) => {
+    router.push(`/developers/docs/${slug}`);
+  };
 
   const toggleCat = (catId: string) => {
     setExpandedCats((prev) => {
@@ -60,7 +66,7 @@ export function DevSidebar({ categories, currentSlug, onNavigate }: DevSidebarPr
               {cat.pages.map((page) => (
                 <button
                   key={page.slug}
-                  onClick={() => onNavigate?.(page.slug)}
+                  onClick={() => navigateTo(page.slug)}
                   className={cn(
                     "text-left px-3 py-1.5 text-sm rounded-md transition-colors",
                     currentSlug === page.slug
