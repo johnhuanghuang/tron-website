@@ -23,11 +23,10 @@ function SimpleHeader() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/images/tron-logo.png"
+              src="/images/tron-logo.jpeg"
               alt="TRON"
               className="h-8 w-auto object-contain"
             />
-            <span className="font-bold text-lg text-[var(--color-text-primary)]">TRON</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (

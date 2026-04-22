@@ -138,13 +138,10 @@ export function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/images/tron-logo.png"
+              src="/images/tron-logo.jpeg"
               alt="TRON"
               className="h-8 w-auto object-contain"
             />
-            <span className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors">
-              TRON
-            </span>
           </a>
 
           {/* Desktop Navigation */}
