@@ -106,7 +106,6 @@ const navItems: NavItem[] = [
       { label: "Contact", href: "/contact", description: "Get in touch", icon: Envelope },
     ],
   },
-  { label: "Developers", href: "/developers" },
 ];
 
 export function Header() {
