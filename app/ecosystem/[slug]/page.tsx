@@ -22,9 +22,11 @@ function SimpleHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[var(--color-primary)] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T</span>
-            </div>
+            <img
+              src="/images/tron-logo.png"
+              alt="TRON"
+              className="h-8 w-auto object-contain"
+            />
             <span className="font-bold text-lg text-[var(--color-text-primary)]">TRON</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
