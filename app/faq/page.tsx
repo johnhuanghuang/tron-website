@@ -9,8 +9,8 @@ import {
   Scales,
   ArrowRight,
 } from "@phosphor-icons/react";
-import { StaticHeader } from "@/components/layout/StaticHeader";
-import { StaticFooter } from "@/components/layout/StaticFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Card } from "@/components/ui/Card";
 
 const faqItems = [
@@ -124,7 +124,7 @@ export default function FaqPage() {
 
   return (
     <>
-      <StaticHeader />
+      <Header />
       <main className="min-h-screen pt-24 pb-16">
         {/* Hero */}
         <section className="relative overflow-hidden py-20 mb-16">
@@ -193,7 +193,7 @@ export default function FaqPage() {
           </div>
         </section>
       </main>
-      <StaticFooter />
+      <Footer />
     </>
   );
 }

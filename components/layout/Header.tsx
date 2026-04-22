@@ -37,7 +37,7 @@ import { cn } from "@/lib/utils/cn";
 
 interface NavDropdownItem {
   label: string;
-  href: string;
+  href?: string;
   description?: string;
   icon: React.ElementType;
 }
@@ -59,7 +59,7 @@ const navItems: NavItem[] = [
       { label: "Explorer", href: "https://tronscan.org/", description: "Browse the TRON blockchain", icon: Globe },
       { label: "Whitepaper", href: "/whitepaper", description: "Read the TRON technical whitepaper", icon: FileText },
       { label: "FAQ", href: "/faq", description: "Frequently asked questions", icon: Question },
-      { label: "Tron AI", href: "/tron-ai", description: "AI-powered TRON ecosystem assistant", icon: ChatCircle },
+      { label: "Tron AI", href: "/tron-ai", description: "AI-powered TRON ecosystem assistant", icon: MagnifyingGlass },
     ],
   },
   {
@@ -207,11 +207,14 @@ export function Header() {
                             
                             <div className="p-2">
                               {item.dropdown.map((dropItem, idx) => (
-                                <a
+                                <button
                                   key={dropItem.label}
-                                  href={dropItem.href}
+                                  onClick={() => {
+                                    if (dropItem.label === "Tron AI") setIsAISearchOpen(true);
+                                    else if (dropItem.href) window.location.href = dropItem.href;
+                                  }}
                                   className={cn(
-                                    "group flex items-center gap-4 px-4 py-3 rounded-xl",
+                                    "group flex items-center gap-4 px-4 py-3 rounded-xl w-full text-left",
                                     "hover:bg-[var(--color-bg-surface)] transition-all duration-200",
                                     "relative overflow-hidden"
                                   )}
@@ -255,7 +258,7 @@ export function Header() {
                                       </span>
                                     )}
                                   </div>
-                                </a>
+                                </button>
                               ))}
                             </div>
                           </div>
@@ -282,16 +285,6 @@ export function Header() {
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-2">
             <button
-              className={cn(
-                "p-2 rounded-lg text-[var(--color-text-secondary)]",
-                "hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-surface)]",
-                "transition-colors duration-200"
-              )}
-              aria-label="Search"
-            >
-              <MagnifyingGlass size={20} weight="bold" />
-            </button>
-            <button
               onClick={() => setIsAISearchOpen(true)}
               className={cn(
                 "flex items-center gap-2 px-4 py-2 rounded-full",
@@ -302,7 +295,7 @@ export function Header() {
               )}
               aria-label="Tron AI"
             >
-              <ChatCircle size={18} weight="bold" />
+              <MagnifyingGlass size={18} weight="bold" />
               Tron AI
             </button>
             <Button size="sm" className="ml-2">
