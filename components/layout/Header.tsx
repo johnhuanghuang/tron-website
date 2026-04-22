@@ -137,7 +137,7 @@ export function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/images/tron-logo.jpeg"
+              src="/images/tron-logo.png"
               alt="TRON"
               className="h-8 w-auto object-contain"
             />

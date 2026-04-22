@@ -23,7 +23,7 @@ function SimpleHeader() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/images/tron-logo.jpeg"
+              src="/images/tron-logo.png"
               alt="TRON"
               className="h-8 w-auto object-contain"
             />
