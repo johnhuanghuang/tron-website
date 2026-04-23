@@ -33,6 +33,7 @@ import {
 } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/Button";
 import { AISearchModal } from "@/app/components/ai/AISearchModal";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { cn } from "@/lib/utils/cn";
 
 interface NavDropdownItem {
@@ -298,6 +299,7 @@ export function Header() {
               <MagnifyingGlass size={18} weight="bold" />
               Tron AI
             </button>
+            <LanguageSwitcher />
             <Button size="sm" className="ml-2">
               <Wallet size={18} weight="bold" className="mr-2" />
               Connect Wallet
