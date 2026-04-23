@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Globe } from "@phosphor-icons/react";
+import Link from "next/link";
+import { Globe, Rocket, Trophy } from "@phosphor-icons/react";
 import { ecosystemProducts, productCategories } from "@/lib/data/ecosystem-products";
 import { ProductCard } from "@/components/ecosystem/ProductCard";
 import { CategoryTabs } from "@/components/ecosystem/CategoryTabs";
@@ -60,6 +61,34 @@ export default function EcosystemPage() {
                 <span className={styles.statDivider} />
                 <span className={styles.statItem}>1亿+ 用户</span>
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Programs Section */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <h2 className={styles.sectionTitle}>Funding & Programs</h2>
+            <p className={styles.sectionSubtitle}>
+              Accelerate your project with grants, gas rebates, and investor connections
+            </p>
+            <div className={styles.programsGrid}>
+              <Link href="/programs" className={styles.programCard}>
+                <div className={styles.programIcon}>
+                  <Rocket size={32} weight="fill" />
+                </div>
+                <h3>Funding Programs</h3>
+                <p>TVL incentives, gas grants, and ecosystem fund up to $500K</p>
+                <span className={styles.programLink}>Explore Programs →</span>
+              </Link>
+              <Link href="/mvb" className={styles.programCard}>
+                <div className={styles.programIcon}>
+                  <Trophy size={32} weight="fill" />
+                </div>
+                <h3>MVB Program</h3>
+                <p>Most Valuable Builder acceleration program with $50K no-equity grant</p>
+                <span className={styles.programLink}>Apply Now →</span>
+              </Link>
             </div>
           </div>
         </section>
