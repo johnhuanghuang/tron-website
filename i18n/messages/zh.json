@@ -1,0 +1,25 @@
+{
+  "common": {
+    "home": "首页",
+    "developers": "开发者",
+    "ecosystem": "生态",
+    "community": "社区",
+    "learnMore": "了解更多",
+    "getStarted": "开始使用",
+    "viewAll": "查看全部",
+    "submit": "提交",
+    "apply": "立即申请",
+    "loading": "加载中..."
+  },
+  "nav": {
+    "start": "开始",
+    "build": "开发",
+    "ecosystem": "生态",
+    "participate": "参与",
+    "more": "更多"
+  },
+  "hero": {
+    "title": "去中心化网络",
+    "subtitle": "TRON 是世界领先的高性能公链"
+  }
+}

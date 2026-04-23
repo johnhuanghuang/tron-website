@@ -1,0 +1,25 @@
+{
+  "common": {
+    "home": "Home",
+    "developers": "Developers",
+    "ecosystem": "Ecosystem",
+    "community": "Community",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "apply": "Apply Now",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "start": "Start",
+    "build": "Build",
+    "ecosystem": "Ecosystem",
+    "participate": "Participate",
+    "more": "More"
+  },
+  "hero": {
+    "title": "DECENTRALIZE THE WEB",
+    "subtitle": "TRON is the world's leading high-performance public chain"
+  }
+}
