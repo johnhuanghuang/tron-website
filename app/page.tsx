@@ -1,5 +1,6 @@
 "use client";
 
+import NextLink from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
@@ -97,6 +98,7 @@ const productCategories = ["All", "DeFi", "Storage", "Cross-Chain", "Stablecoin"
 // News data
 const newsItems = [
   {
+    id: "1",
     title: "TRON DAO Reserve Expands USDD Minting Cap to $5B",
     category: "Product Update",
     date: "2026-04-15",
@@ -104,6 +106,7 @@ const newsItems = [
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop",
   },
   {
+    id: "2",
     title: "BitTorrent Chain Achieves 10M Daily Active Addresses",
     category: "Partnership",
     date: "2026-04-10",
@@ -111,6 +114,7 @@ const newsItems = [
     image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=400&h=250&fit=crop",
   },
   {
+    id: "3",
     title: "TRON Partners with Major DeFi Protocols for TVL Incentive Program",
     category: "Developer",
     date: "2026-04-05",
@@ -663,36 +667,37 @@ export default function HomePage() {
                 <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-2">Latest TRON News</h2>
                 <p className="text-[var(--color-text-secondary)]">Stay updated with the latest from TRON</p>
               </div>
-              <Button variant="ghost">View All News <ArrowRight size={18} weight="bold" className="ml-2" /></Button>
+              <NextLink href="/news"><Button variant="ghost">View All News <ArrowRight size={18} weight="bold" className="ml-2" /></Button></NextLink>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {newsItems.map((news, idx) => (
-                <motion.div
-                  key={news.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="group rounded-3xl overflow-hidden cursor-pointer"
-                  style={{ background: 'var(--color-bg-surface)', border: '1px solid rgba(255,255,255,0.06)' }}
-                >
-                  <div className="aspect-video relative overflow-hidden">
-                    <img src={news.image} alt={news.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    <div className="absolute top-4 left-4">
-                      <Badge variant="outline" size="sm">{news.category}</Badge>
+                <NextLink key={news.title} href={`/news/${news.id}`}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                    className="group rounded-3xl overflow-hidden cursor-pointer h-full"
+                    style={{ background: 'var(--color-bg-surface)', border: '1px solid rgba(255,255,255,0.06)' }}
+                  >
+                    <div className="aspect-video relative overflow-hidden">
+                      <img src={news.image} alt={news.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <div className="absolute top-4 left-4">
+                        <Badge variant="outline" size="sm">{news.category}</Badge>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-xs text-[var(--color-text-tertiary)] mb-3">
-                      <Calendar size={14} />
-                      <span>{news.date}</span>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-xs text-[var(--color-text-tertiary)] mb-3">
+                        <Calendar size={14} />
+                        <span>{news.date}</span>
+                      </div>
+                      <h4 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2 line-clamp-2">{news.title}</h4>
+                      <p className="text-sm text-[var(--color-text-tertiary)] line-clamp-2">{news.summary}</p>
                     </div>
-                    <h4 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2 line-clamp-2">{news.title}</h4>
-                    <p className="text-sm text-[var(--color-text-tertiary)] line-clamp-2">{news.summary}</p>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </NextLink>
               ))}
             </div>
           </div>
