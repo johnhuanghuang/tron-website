@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Newspaper, Calendar, Tag, ArrowRight, TwitterLogo, DiscordLogo, TelegramLogo, Link, CheckCircle } from "@phosphor-icons/react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils/cn";
 
 const categories = ["全部", "产品更新", "生态合作", "活动回顾", "开发者", "机构"];
@@ -95,7 +97,9 @@ export default function NewsPage() {
   };
 
   return (
-    <main className="min-h-screen pt-16">
+    <>
+      <Header />
+      <main className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 px-4">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-primary)] to-[var(--color-bg-secondary)]" />
@@ -313,5 +317,7 @@ export default function NewsPage() {
         </div>
       </section>
     </main>
+      <Footer />
+    </>
   );
 }

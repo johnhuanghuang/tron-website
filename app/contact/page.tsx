@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import {
   Envelope,
   User,
@@ -133,6 +135,9 @@ export default function ContactPage() {
   }
 
   return (
+    <>
+      <Header />
+      <main className="flex-1 pt-16">
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <section className="relative py-32 px-6 overflow-hidden hero-bg">
@@ -412,5 +417,8 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+      </main>
+      <Footer />
+    </>
   );
 }

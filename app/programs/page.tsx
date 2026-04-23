@@ -1,6 +1,8 @@
 "use client";
 
 import { Rocket, ChartLine, Coins, CheckCircle, ArrowRight, Users, Lightbulb, Money, Handshake, Globe, Code } from "@phosphor-icons/react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { FAQAccordion } from "@/components/programs/FAQAccordion";
 import { cn } from "@/lib/utils/cn";
 
@@ -110,7 +112,9 @@ const faqItems = [
 
 export default function ProgramsPage() {
   return (
-    <main className="min-h-screen pt-16">
+    <>
+      <Header />
+      <main className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 px-4">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-primary)] to-[var(--color-bg-secondary)]" />
@@ -329,5 +333,7 @@ export default function ProgramsPage() {
         </div>
       </section>
     </main>
+      <Footer />
+    </>
   );
 }

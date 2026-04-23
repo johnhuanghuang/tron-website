@@ -2,9 +2,10 @@ import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { DevSidebar } from "@/components/dev";
+import { DevSidebar } from "@/components/dev/DevSidebar";
 import { DocRenderer } from "@/components/dev/DocRenderer";
-import { DocTOC, Heading } from "@/components/dev/DocTOC";
+import { DocTOC } from "@/components/dev/DocTOC";
+import type { Heading } from "@/components/dev/DocTOC";
 import docIndex from "@/content/docs/index.json";
 
 function slugify(text: string): string {
